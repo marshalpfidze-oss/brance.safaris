@@ -1,0 +1,20 @@
+{
+  "name": "brance-tours-safaris",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brance Tours & Safaris website and booking email backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test --test-reporter=spec server.test.js",
+    "admin:hash": "node scripts/hash-admin-password.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "nodemailer": "^10.1.7"
+  }
+}

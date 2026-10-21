@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plan a safari in Victoria Falls and beyond with Brance Tours & Safaris. Explore game drives, wildlife experiences and multi-day adventures.">
+  <title>Brance Tours & Safaris | Victoria Falls Safaris</title>
+  <link rel="stylesheet" href="sytle.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Brance Tours and Safaris home">
+      <img
+        src="logo.png"
+        alt="Brance Tours & Safaris"
+        class="brand-logo"
+        width="1254"
+        height="1254">
+      <span class="brand-name">BRANCE TOURS AND SAFARIS</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav" id="navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#tours">Our Tours</a>
+      <a href="#accommodation">Accommodation</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#gallery">Gallery</a>
+      <a class="nav-auth" id="loginNav" href="/login.html">Log in</a>
+      <a class="nav-auth nav-auth-primary" id="signupNav" href="/signup.html">Sign up</a>
+      <a class="nav-auth" id="customerNav" href="/dashboard.html" hidden>My bookings</a>
+      <button class="nav-auth nav-auth-button" id="customerLogout" type="button" hidden>Log out</button>
+      <a href="#contact" class="nav-cta">Book Your Safari</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">SMALL-GROUP & PRIVATE SAFARI ENQUIRIES</p>
+        <h1>Closer to the wild.<br>Closer to Africa.</h1>
+        <p>
+          Explore Victoria Falls and beyond with a safari experience shaped
+          around your interests, travel dates and the people you are travelling with.
+        </p>
+        <div class="hero-buttons">
+          <a href="#tours" class="button button-gold">Explore Experiences</a>
+          <a href="https://wa.me/263789934035" class="button button-outline"
+            target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-strip" aria-label="Safari planning highlights">
+      <div><span>01</span><p>Private & small-group enquiries</p></div>
+      <div><span>02</span><p>Safari and local experiences</p></div>
+      <div><span>03</span><p>Plan directly with our team</p></div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section about" id="about">
+      <div class="about-image">
+        <img
+          src="baobab.jpg"
+          alt="African wildlife on safari" loading="lazy">
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow">WELCOME TO BRANCE</p>
+        <h2>Your Victoria Falls safari, your way</h2>
+        <p>
+          Start with the experience you have in mind. From wildlife drives
+          and river-country escapes to relaxed town experiences, our team
+          can help you enquire about a safari that fits your trip.
+        </p>
+        <p>
+          Travelling solo, as a couple, with family or a group? Tell us your
+          dates and preferences and we will confirm the options available.
+        </p>
+        <a href="#contact" class="text-link">Plan your safari with us →</a>
+      </div>
+    </section>
+
+    <!-- Tours -->
+    <section class="section tours-section" id="tours">
+      <div class="section-heading">
+        <p class="eyebrow">FIND YOUR KIND OF ADVENTURE</p>
+        <h2>Safari experiences</h2>
+        <p>Choose an experience to ask about. We’ll confirm availability, pricing and details with you.</p>
+      </div>
+
+      <div class="filter-buttons" aria-label="Filter tours">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Experiences</button>
+        <button class="filter-btn" data-filter="wildlife" aria-pressed="false">Wildlife</button>
+        <button class="filter-btn" data-filter="adventure" aria-pressed="false">Adventure</button>
+        <button class="filter-btn" data-filter="sightseeing" aria-pressed="false">Scenic & Cultural</button>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card" data-category="wildlife">
+          <img
+            src="brance image.jpg"
+            alt="Open safari vehicle exploring African wildlife" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">WILDLIFE · 4X4</span>
+            <h3>Zambezi Game Drive $75</h3>
+            <p>Guided safaris in open-top vehicles through national parks and game reserves. This is your best opportunity to spot the region's diverse wildlife—including the Big Five (lions, leopards, rhinos, elephants, and cape buffalo)—while learning about local flora and fauna from an expert guide..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Zambezi Game Drive">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="adventure">
+          <img
+            src="bikes.jpg"
+            alt="Starry night sky above a mountain landscape" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">EVENING ADVENTURE</span>
+            <h3>RIDING QUARD BIKES $95</h3>
+            <p>Off-road adventures riding ATVs through rugged bush tracks, local terrain, and along parts of the Zambezi River. Options include shorter half-day rides, full-day expeditions, and specialized sessions focused on dirt drifting and handling challenging tracks..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="RIDING QUARD BIKES">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="wildlife">
+          <img
+            src="rafting.jpeg"
+            alt="Wildlife in an African national park" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">VICTORIA FALLS . ACTIVITIES</span>
+            <h3> RAFTING $120</h3>
+            <p>Regarded as one of the best white-water rafting experiences in the world, tackling the fierce, grade-V rapids of the Batoka Gorge immediately downstream from Victoria Falls.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Rafting (White-Water Rafting)">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="adventure">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
+            alt="Food cooking over a barbecue" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">FOOD & BUSH</span>
+            <h3>Braai Safari $60</h3>
+            <p>Ask about combining time outdoors with a relaxed open-fire meal.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Braai (BBQ) Safari">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="sightseeing">
+          <img src="zipline.jpeg"
+            alt="A carefully prepared afternoon tea" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">VICTORIA FALLS . ACTIVITIES</span>
+            <h3> ZIP LINE $85</h3>
+            <p>An extreme adventure ride that launches participants off a high cliff edge—often across the Batoka Gorge—soaring high above the rushing waters of the Zambezi River with panoramic views of the gorge walls..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Zip Line Experience">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="adventure">
+          <img src="helicopter.jpg"
+            alt="A refreshing drink served outdoors" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">SCENIC & SIGHTSEEING TOURS</span>
+            <h3>Helicopter Tours / Microlight Flights:$100</h3>
+            <p>Aerial sightseeing flights over the waterfall. Commonly known as the "Flight of Angels," these helicopter or open-cockpit microlight flights give you a breathtaking bird’s-eye perspective of the entire chasm, the zig-zagging gorges, and the Zambezi River..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Helicopter Tours / Microlight Flights">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="wildlife">
+          <img src="gorgehiking.jpeg"
+            alt="Birdlife and wildlife in the African bush" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">GORGE HIKING</span>
+            <h3>Geological Formations $90</h3>
+            <p>Led by expert guides, participants hike along the steep, rocky slopes and floor of the canyon. It is both a physical trek and an exploration of the unique ecosystem found beneath the rim of the gorge..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Geological Formations">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="sightseeing">
+          <img src="boma.jpg"
+            alt="Scenic view near a destination town" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">LOCAL CULTURE</span>
+            <h3>Boma dinner and Drum Show</h3>
+            <p>An energetic evening dining and cultural entertainment experience. It features traditional Zimbabwean cuisine (including wild game meats), interactive traditional drumming, vibrant dance performances, storytelling, and face painting..</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Boma dinner and Drum Show">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="wildlife">
+          <img src="boat.jpeg"
+            alt="Elephants in the wild" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">ZAMBEZI RIVER ADVENTURE</span>
+            <h3>Jet Boat & Jet Ski</h3>
+            <p>High-speed water sports on the Zambezi River. Jet boats execute thrilling 360-degree spins and navigate narrow rapids at high speeds, while jet skis let you power across the water.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Jet Boat & Jet Ski">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="wildlife">
+          <img src="elephants.avif"
+            alt="Wide open wilderness landscape" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">MULTI-DAY SAFARI</span>
+            <h3>Full Day Chobe National Park Excursion</h3>
+            <p>A cross-border day trip to Chobe National Park in neighboring Botswana. It typically combines a thrilling river boat cruise along the Chobe River (famous for massive elephant and hippo herds) with a land-based game drive.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Full Day Chobe National Park Excursion">Enquire about this experience →</a>
+          </div>
+        </article>
+
+         <article class="tour-card" data-category="wildlife">
+          <img src="TOUR.webp"
+            alt="Wide open wilderness landscape" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">MULTI-DAY SAFARI</span>
+            <h3>VILLAGE TOUR</h3>
+            <p>Immerse yourself in the authentic heart and soul of Zimbabwe with Brance Tours and Safaris on our guided Traditional Village Tour in Victoria Falls! Step beyond the Falls into real rural homesteads to meet welcoming locals, learn about rich traditions and storytelling, see hands-on daily chores and cooking techniques, and support local artisans by browsing handmade crafts. Perfect for all ages and fully hassle-free with included hotel transfers, this 2-hour cultural journey is waiting for you—contact us to book.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="VILLAGE TOUR">Enquire about this experience →</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="adventure">
+          <img src="bamba.jpeg"
+            alt="Historical tram ride" loading="lazy">
+          <div class="tour-info">
+            <span class="tour-tag">MULTI-DAY · CAMPING</span>
+            <h3>Bamba Tram Safari</h3>
+            <p>A nostalgic, historical tram ride experience that takes visitors across the iconic Victoria Falls Bridge and surrounding scenic routes while sharing historical context about the area and the bridge's construction.</p>
+            <a href="#contact" class="text-link book-tour"
+              data-tour="Bamba Tram Safari">Enquire about this experience →</a>
+          </div>
+        </article>
+      </div>
+      <p class="demo-note">
+        Experiences, departure points and inclusions are subject to availability.
+        Contact us to confirm current options and pricing.
+      </p>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="why-section">
+      <div class="section-heading">
+        <p class="eyebrow">PLAN WITH CONFIDENCE</p>
+        <h2>A safari that starts with your questions</h2>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <span class="feature-icon">01</span>
+          <h3>Small-group or private</h3>
+          <p>Tell us what kind of outing you prefer and we’ll confirm what can be arranged.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">02</span>
+          <h3>Clear, direct enquiries</h3>
+          <p>Share your dates and interests with our team and ask about availability and pricing.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">03</span>
+          <h3>More than one destination</h3>
+          <p>Ask about Victoria Falls, Livingstone, Kasane and longer safari itineraries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="accommodation">
+      <div class="section-heading">
+        <p class="eyebrow">PLAN YOUR STAY</p>
+        <h2>Accommodation</h2>
+        <p>Explore these illustrative accommodation examples. Names, descriptions and photos are samples; contact us to confirm actual properties, availability and rates.</p>
+      </div>
+      <div class="accommodation-search">
+        <label class="visually-hidden" for="accommodationSearch">Search accommodation by name, location, type or price</label>
+        <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="10.8" cy="10.8" r="6.8"></circle>
+          <path d="m16 16 5 5"></path>
+        </svg>
+        <input id="accommodationSearch" type="search"
+          placeholder="Search by name, location, type or price..."
+          autocomplete="off" aria-controls="accommodationResults">
+        <button class="search-clear" id="clearAccommodationSearch" type="button"
+          aria-label="Clear accommodation search">Clear</button>
+      </div>
+      <p class="search-status" id="accommodationSearchStatus" aria-live="polite"></p>
+      <div class="accommodation-grid" id="accommodationResults">
+        <article class="accommodation-card">
+          <img
+            src="the outlook.jpeg"
+            alt="Representative photo of a lodge among lush greenery" loading="lazy">
+          <div class="accommodation-info">
+            <span class="tour-tag">LODGE · VICTORIA FALLS</span>
+            <h3>THE OUTLOOK</h3>
+            <p class="accommodation-location">Victoria Falls, Zimbabwe</p>
+            <p class="accommodation-description">Tucked away in a quiet neighborhood just down the road from the main town and the magnificent Victoria Falls, The Little Outlook offers an intimate and romantic lodge experience. With only 6 private rooms—including en-suite standard rooms and spacious two-bedroom family units—guests are treated to personalized service, tranquil garden settings, and modern comforts like air conditioning and free Wi-Fi. It is the ideal home-away-from-home for couples and small families looking for peace, charm, and easy access to local adventures.</p>
+            <p class="accommodation-price"><span>Price per night</span>Contact us for rates (USD)</p>
+            <div class="accommodation-actions">
+              <a class="button button-gold book-tour" href="#contact" data-tour="The Outlook (Accommodation)">Book Now</a>
+              <details class="accommodation-details">
+                <summary class="button accommodation-details-toggle">View Details</summary>
+                <p>Illustrative lodge listing only. Ask our team to confirm real property options, amenities and availability for your dates.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="accommodation-card">
+          <img
+            src="little look.jpg"
+            alt="Representative photo of a comfortable hotel and pool" loading="lazy">
+          <div class="accommodation-info">
+            <span class="tour-tag">HOTEL · VICTORIA FALLS</span>
+            <h3>THE LITTLE OUTLOOK</h3>
+            <p class="accommodation-location">Victoria Falls, Zimbabwe</p>
+            <p class="accommodation-description">Nestled in the heart of Victoria Falls, our lodge offers a serene and stylish retreat designed for travelers seeking both relaxation and adventure. Choose from our flexible room-only or breakfast-inclusive packages tailored to fit your travel style. With plush modern amenities, lush outdoor spaces, and a prime location close to the breathtaking rainforest and local attractions, we provide the perfect base for your Zimbabwean holiday.</p>
+            <p class="accommodation-price"><span>Price per night</span>Contact us for rates (USD)</p>
+            <div class="accommodation-actions">
+              <a class="button button-gold book-tour" href="#contact" data-tour="The Little Outlook (Accommodation)">Book Now</a>
+              <details class="accommodation-details">
+                <summary class="button accommodation-details-toggle">View Details</summary>
+                <p>Illustrative hotel listing only. Ask our team to confirm real property options, amenities and availability for your dates.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="accommodation-card">
+          <img
+            src="spring.jpg"
+            alt="Representative photo of a quiet guesthouse-style cabin" loading="lazy">
+          <div class="accommodation-info">
+            <span class="tour-tag">GUESTHOUSE · VICTORIA FALLS</span>
+            <h3>SPRING VILLA GUEST LODGE AND CAMPSITE</h3>
+            <p class="accommodation-location">Victoria Falls, Zimbabwe</p>
+            <p class="accommodation-description"></p>Blending rustic outdoor charm with modern hospitality, our property offers the best of both worlds. Choose between fully equipped, cozy lodge rooms for total relaxation or our scenic, well-maintained campsites for the true outdoor enthusiast. Featuring top-notch shared amenities, beautiful natural surroundings, and a welcoming atmosphere, it’s the ideal destination for families, backpackers, and weekend getaway seekers alike.</p>
+            <p class="accommodation-price"><span>Price per night</span>Contact us for rates (USD)</p>
+            <div class="accommodation-actions">
+              <a class="button button-gold book-tour" href="#contact" data-tour="Spring Villa Guest Lodge and Campsite (Accommodation)">Book Now</a>
+              <details class="accommodation-details">
+                <summary class="button accommodation-details-toggle">View Details</summary>
+                <p>Illustrative guesthouse listing only. Ask our team to confirm real property options, amenities and availability for your dates.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="accommodation-card">
+          <img
+            src="bethel.jpg"
+            alt="Representative photo of a safari camp with a pool" loading="lazy">
+          <div class="accommodation-info">
+            <span class="tour-tag">SAFARI CAMP · VICTORIA FALLS AREA</span>
+            <h3>BETHEL LODGINGS</h3>
+            <p class="accommodation-location">Victoria Falls area, Zimbabwe</p>
+            <p class="accommodation-description">Newly built with a stylish interior design incorporating modern technology, Bethel Lodgings provides an efficient, comfortable, and superior accommodation experience right in the heart of Victoria Falls. From cozy double and twin rooms to top-tier amenities like a sparkling swimming pool, secure self-parking, and a shared self-catering kitchen, it is the ideal sanctuary for couples, families, and travelers looking for quality and convenience without compromise.</p>
+            <p class="accommodation-price"><span>Price per night</span>Contact us for rates (USD)</p>
+            <div class="accommodation-actions">
+              <a class="button button-gold book-tour" href="#contact" data-tour="Bethel Lodgings (Accommodation)">Book Now</a>
+              <details class="accommodation-details">
+                <summary class="button accommodation-details-toggle">View Details</summary>
+                <p>Illustrative safari camp listing only. Ask our team to confirm real property options, amenities and availability for your dates.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="destinations-section" id="destinations">
+      <div class="destinations-copy">
+        <p class="eyebrow">WHERE WOULD YOU LIKE TO GO?</p>
+        <h2>Start in Victoria Falls—or explore beyond</h2>
+        <p>Tell us where you’ll be based. We’ll help you check which experiences and departure options fit your plans.</p>
+      </div>
+      <div class="destination-list" aria-label="Destinations to ask about">
+        <span>Victoria Falls</span>
+        <span>Livingstone</span>
+        <span>Kasane</span>
+        <span>Chobe & Hwange</span>
+      </div>
+      <a class="button button-gold" href="#contact">Ask about destinations</a>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery-section" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">A GLIMPSE OF AFRICA</p>
+        <h2>Explore Our World</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=800&q=80"
+          alt="African safari landscape" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=800&q=80"
+          alt="Elephants in the wild" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+          alt="African wildlife" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+          alt="Beautiful outdoor destination" loading="lazy">
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="section-heading">
+        <p class="eyebrow">GOOD TO KNOW</p>
+        <h2>Planning your safari</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How do I check availability and prices?</summary>
+          <p>Send your preferred date, group size and experience through the enquiry form. Our team will confirm current availability, pricing and inclusions.</p>
+        </details>
+        <details>
+          <summary>Can I ask about a private or small-group outing?</summary>
+          <p>Yes. Include your preference in the message and we’ll let you know which options can be arranged for your dates.</p>
+        </details>
+        <details>
+          <summary>Where can my safari start?</summary>
+          <p>Ask about Victoria Falls, Livingstone or Kasane departures. The available meeting point depends on the experience and date.</p>
+        </details>
+        <details>
+          <summary>What should I include in my enquiry?</summary>
+          <p>Share your travel date, number of travellers, preferred destination and any activities or accessibility needs you’d like us to consider.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+      <div class="contact-intro">
+        <p class="eyebrow">LET'S PLAN YOUR ADVENTURE</p>
+        <h2>Your African Story Starts Here</h2>
+        <p>Contact our team to check availability, request a quotation or plan your trip.</p>
+
+        <div class="contact-person">
+          <h3>Prince</h3>
+          <p><a href="tel:+263789934035">+263 78 993 4035</a></p>
+          <p><a href="https://wa.me/263789934035" target="_blank"
+            rel="noopener noreferrer">Chat with Prince on WhatsApp</a></p>
+        </div>
+
+        <div class="contact-person">
+          <h3>Brandon</h3>
+          <p><a href="tel:+263774978926">+263 77 497 8926</a></p>
+          <p><a href="https://wa.me/263774978926" target="_blank"
+            rel="noopener noreferrer">Chat with Brandon on WhatsApp</a></p>
+        </div>
+
+        <p><a href="mailto:brancetoursandsafaris@gmail.com">
+          Email our team: brancetoursandsafaris@gmail.com</a></p>
+      </div>
+
+      <form class="contact-form" id="bookingForm" method="post" action="/api/bookings" aria-describedby="formStatus">
+        <h3>Plan your safari</h3>
+
+        <label for="name">Your full name</label>
+        <input id="name" name="name" type="text"
+          placeholder="Enter your name" maxlength="120" autocomplete="name" required>
+
+        <label for="email">Your email address (optional)</label>
+        <input id="email" name="email" type="email"
+          placeholder="you@example.com" maxlength="254" autocomplete="email">
+
+        <label for="phone">Phone number (provide phone or WhatsApp)</label>
+        <input id="phone" name="phone" type="tel"
+          placeholder="+263..." maxlength="30" autocomplete="tel">
+
+        <label for="whatsapp">WhatsApp number (provide phone or WhatsApp)</label>
+        <input id="whatsapp" name="whatsapp" type="tel"
+          placeholder="+263..." maxlength="30">
+        <p class="form-note">Provide a phone number or WhatsApp number so our team can contact you.</p>
+
+        <label for="service">Choose a service</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option value="Zambezi Game Drive">Zambezi Game Drive</option>
+          <option value="RIDING QUARD BIKES">Quad Bikes</option>
+          <option value="Rafting (White-Water Rafting)">Rafting</option>
+          <option value="Braai (BBQ) Safari">Braai (BBQ) Safari</option>
+          <option value="Zip Line Experience">Zip Line Experience</option>
+          <option value="Helicopter Tours / Microlight Flights">Helicopter Tours / Microlight Flights</option>
+          <option value="Geological Formations">Geological Formations</option>
+          <option value="Boma dinner and Drum Show">Boma Dinner and Drum Show</option>
+          <option value="Jet Boat & Jet Ski">Jet Boat & Jet Ski</option>
+          <option value="Full Day Chobe National Park Excursion">Full Day Chobe National Park Excursion</option>
+          <option value="VILLAGE TOUR">Village Tour</option>
+          <option value="Bamba Tram Safari">Bamba Tram Safari</option>
+          <option value="Helicopter tours">Helicopter tours</option>
+          <option value="village tour">Village tour</option>
+          <option value="High Tea Safari">High Tea Safari</option>
+          <option value="Gin & Tonic Safari">Gin & Tonic Safari</option>
+          <option value="Baobab & Vulture Experience">Baobab & Vulture Experience</option>
+          <option value="Guided Town Safari">Guided Town Safari</option>
+          <option value="Chobe Day Trip">Chobe Day Trip</option>
+          <option value="Chobe Overnight Safari">Chobe Overnight Safari</option>
+          <option value="Hwange Safari">Hwange Safari</option>
+          <option value="Victoria Falls Guided Tour">Victoria Falls Guided Tour</option>
+          <option value="Guided Rainforest Walk">Guided Rainforest Walk</option>
+          <option value="The Outlook (Accommodation)">The Outlook accommodation</option>
+          <option value="The Little Outlook (Accommodation)">The Little Outlook accommodation</option>
+          <option value="Spring Villa Guest Lodge and Campsite (Accommodation)">Spring Villa Guest Lodge and Campsite</option>
+          <option value="Bethel Lodgings (Accommodation)">Bethel Lodgings accommodation</option>
+          <option value="Airport transfer">Airport transfer</option>
+          <option value="Other service">Other service</option>
+        </select>
+
+        <label for="serviceDetails">Other service details (if applicable)</label>
+        <input id="serviceDetails" name="serviceDetails" type="text"
+          placeholder="Describe the service if you selected Other service" maxlength="200">
+
+        <label for="adults">Number of adults</label>
+        <input id="adults" name="adults" type="number"
+          min="1" max="99" value="1" required>
+
+        <label for="children">Number of children</label>
+        <input id="children" name="children" type="number"
+          min="0" max="99" value="0" required>
+
+        <p class="guest-total" id="guestCount" aria-live="polite">Total guests: 1</p>
+
+        <label for="date">Preferred booking date</label>
+        <input id="date" name="date" type="date">
+
+        <label for="preferredTime">Preferred time (optional)</label>
+        <input id="preferredTime" name="preferredTime" type="time">
+
+        <label for="location">Accommodation or pickup location (if applicable)</label>
+        <input id="location" name="location" type="text"
+          placeholder="Hotel, lodge, address or pickup point" maxlength="200">
+
+        <label for="specialRequests">Special requests or additional information</label>
+        <textarea id="specialRequests" name="specialRequests" rows="4"
+          placeholder="Share any preferences, questions or other details..." maxlength="2000"></textarea>
+
+        <button type="submit" class="button button-gold full-button">
+          Submit Booking Request
+        </button>
+        <p class="form-note">Your request will be sent securely to Brance Tours & Safaris. It is not confirmed until our team contacts you.</p>
+        <p class="form-note" id="formStatus" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <div class="chat-widget">
+    <section class="chat-panel" id="chatPanel" aria-label="Brance demo chat assistant" hidden>
+      <div class="chat-header">
+        <div>
+          <h2>Stay & Safari Assistant</h2>
+          <span class="chat-demo-label">DEMO · NOT AI-POWERED</span>
+        </div>
+        <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+      </div>
+      <div class="chat-messages" id="chatMessages" aria-live="polite" aria-relevant="additions">
+        <p class="chat-bubble chat-assistant">Hello! Welcome. How can I help you plan your stay?</p>
+        <p class="chat-demo-note">Demo assistant: replies use information on this website and are not generated by AI.</p>
+      </div>
+      <div class="chat-suggestions" aria-label="Suggested questions">
+        <button type="button">Find accommodation in Victoria Falls</button>
+        <button type="button">What accommodation is available?</button>
+        <button type="button">Show me accommodation prices</button>
+        <button type="button">Help me choose a safari lodge</button>
+      </div>
+      <form class="chat-form" id="chatForm">
+        <label class="visually-hidden" for="chatInput">Ask about accommodation, prices, tours or destinations</label>
+        <input id="chatInput" name="question" type="text" maxlength="500"
+          placeholder="Ask a question..." autocomplete="off" required>
+        <button class="button button-gold" type="submit">Send</button>
+      </form>
+    </section>
+    <button class="chat-launcher" id="chatLauncher" type="button"
+      aria-controls="chatPanel" aria-expanded="false">
+      <span aria-hidden="true">✦</span> Ask us
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a class="footer-brand" href="#home">BRANCE TOURS & SAFARIS</a>
+    <p>Explore Africa. Experience the Wild.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#tours">Tours</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="copyright">
+      © <span id="year"></span> Brance Tours & Safaris. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="customer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

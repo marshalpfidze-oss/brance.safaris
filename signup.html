@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a Brance Tours & Safaris customer account.">
+  <title>Sign Up | Brance Tours & Safaris</title>
+  <link rel="stylesheet" href="sytle.css">
+  <script src="customer.js" defer></script>
+</head>
+<body class="account-page">
+  <header class="account-header">
+    <a class="brand" href="/" aria-label="Brance Tours & Safaris home">
+      <img src="logo.png" alt="" class="brand-logo" width="1254" height="1254">
+      <span class="brand-name">BRANCE TOURS & SAFARIS</span>
+    </a>
+    <nav class="account-nav" aria-label="Account navigation">
+      <a href="/">Home</a>
+      <a class="nav-auth" id="loginNav" href="/login.html">Log in</a>
+      <a class="nav-auth nav-auth-primary" id="signupNav" href="/signup.html" hidden>Sign up</a>
+      <a class="nav-auth" id="customerNav" href="/dashboard.html" hidden>My bookings</a>
+      <button class="nav-auth nav-auth-button" id="customerLogout" type="button" hidden>Log out</button>
+    </nav>
+  </header>
+  <main class="account-main">
+    <section class="account-card" aria-labelledby="pageTitle">
+      <p class="eyebrow">YOUR SAFARI, YOUR ACCOUNT</p>
+      <h1 id="pageTitle">Create an account</h1>
+      <p>Save your details and view booking requests in one place.</p>
+      <form class="account-form" id="signupForm">
+        <label for="signupName">Full name</label>
+        <input id="signupName" name="fullName" type="text" autocomplete="name"
+          minlength="2" maxlength="120" required>
+        <label for="signupEmail">Email address</label>
+        <input id="signupEmail" name="email" type="email" autocomplete="email"
+          maxlength="254" required>
+        <label for="signupPassword">Password</label>
+        <div class="password-field">
+          <input id="signupPassword" name="password" type="password"
+            autocomplete="new-password" minlength="12" maxlength="256" required>
+          <button class="password-toggle" type="button" data-password-toggle="signupPassword"
+            aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <p class="account-hint">Use at least 12 characters.</p>
+        <label for="confirmPassword">Confirm password</label>
+        <div class="password-field">
+          <input id="confirmPassword" name="confirmPassword" type="password"
+            autocomplete="new-password" minlength="12" maxlength="256" required>
+          <button class="password-toggle" type="button" data-password-toggle="confirmPassword"
+            aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <button class="button button-gold full-button" type="submit">Create account</button>
+      </form>
+      <p class="account-status" id="signupStatus" role="status" aria-live="polite"></p>
+      <p class="account-switch">Already registered? <a href="/login.html">Log in</a></p>
+    </section>
+  </main>
+</body>
+</html>

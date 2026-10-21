@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to your Brance Tours & Safaris customer account.">
+  <title>Log In | Brance Tours & Safaris</title>
+  <link rel="stylesheet" href="sytle.css">
+  <script src="customer.js" defer></script>
+</head>
+<body class="account-page">
+  <header class="account-header">
+    <a class="brand" href="/" aria-label="Brance Tours & Safaris home">
+      <img src="logo.png" alt="" class="brand-logo" width="1254" height="1254">
+      <span class="brand-name">BRANCE TOURS & SAFARIS</span>
+    </a>
+    <nav class="account-nav" aria-label="Account navigation">
+      <a href="/">Home</a>
+      <a class="nav-auth" id="loginNav" href="/login.html" hidden>Log in</a>
+      <a class="nav-auth nav-auth-primary" id="signupNav" href="/signup.html">Sign up</a>
+      <a class="nav-auth" id="customerNav" href="/dashboard.html" hidden>My bookings</a>
+      <button class="nav-auth nav-auth-button" id="customerLogout" type="button" hidden>Log out</button>
+    </nav>
+  </header>
+  <main class="account-main">
+    <section class="account-card" aria-labelledby="pageTitle">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1 id="pageTitle">Log in to your account</h1>
+      <p>View your booking requests and keep your trip details together.</p>
+      <form class="account-form" id="loginForm">
+        <label for="loginEmail">Email address</label>
+        <input id="loginEmail" name="email" type="email" autocomplete="email"
+          maxlength="254" required>
+        <label for="loginPassword">Password</label>
+        <div class="password-field">
+          <input id="loginPassword" name="password" type="password"
+            autocomplete="current-password" maxlength="256" required>
+          <button class="password-toggle" type="button" data-password-toggle="loginPassword"
+            aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <a class="account-link forgot-link" href="/reset-password.html">Forgot password?</a>
+        <button class="button button-gold full-button" type="submit">Log in</button>
+      </form>
+      <p class="account-status" id="loginStatus" role="status" aria-live="polite"></p>
+      <p class="account-switch">New to Brance? <a href="/signup.html">Create an account</a></p>
+    </section>
+  </main>
+</body>
+</html>

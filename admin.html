@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Booking Admin | Brance Tours & Safaris</title>
+  <link rel="stylesheet" href="sytle.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <a class="brand" href="/" aria-label="Brance Tours & Safaris home">
+      <img src="logo.png" alt="" class="brand-logo" width="1254" height="1254">
+      <span class="brand-name">BRANCE TOURS & SAFARIS</span>
+    </a>
+    <span class="admin-header-label">Booking administration</span>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-panel admin-login" id="loginPanel">
+      <p class="eyebrow">STAFF ACCESS</p>
+      <h1>Sign in to bookings</h1>
+      <p>Authorized Brance Tours & Safaris staff only.</p>
+      <form id="loginForm">
+        <label for="adminUsername">Username</label>
+        <input id="adminUsername" name="username" type="text" autocomplete="username"
+          maxlength="100" required>
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" name="password" type="password"
+          autocomplete="current-password" maxlength="256" required>
+        <button class="button button-gold admin-primary-button" type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <p class="admin-status" id="adminStatus" role="status" aria-live="polite"></p>
+
+    <section class="admin-dashboard" id="dashboardPanel" hidden>
+      <div class="admin-title-row">
+        <div>
+          <p class="eyebrow">BOOKINGS</p>
+          <h1>Booking requests</h1>
+          <p id="adminWelcome"></p>
+        </div>
+        <button class="button admin-logout" id="logoutButton" type="button">Sign out</button>
+      </div>
+
+      <form class="admin-panel admin-filters" id="filterForm">
+        <label for="searchBookings">Search name, reference, email, phone or service</label>
+        <input id="searchBookings" name="q" type="search" maxlength="100"
+          placeholder="e.g. BTS-20261020 or Victoria Falls">
+        <div class="admin-filter-grid">
+          <div>
+            <label for="filterStatus">Booking status</label>
+            <select id="filterStatus" name="status">
+              <option value="">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <div>
+            <label for="dateFrom">Booking date from</label>
+            <input id="dateFrom" name="dateFrom" type="date">
+          </div>
+          <div>
+            <label for="dateTo">Booking date to</label>
+            <input id="dateTo" name="dateTo" type="date">
+          </div>
+          <button class="button button-gold admin-filter-button" type="submit">Filter bookings</button>
+        </div>
+      </form>
+
+      <p class="admin-result-count" id="resultCount"></p>
+      <div class="admin-bookings" id="bookingList" aria-live="polite"></div>
+      <nav class="admin-pagination" id="pagination" aria-label="Booking pages" hidden>
+        <button class="admin-action" id="previousPage" type="button">Previous</button>
+        <span id="pageLabel"></span>
+        <button class="admin-action" id="nextPage" type="button">Next</button>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>

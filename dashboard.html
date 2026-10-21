@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your Brance Tours & Safaris booking requests.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>My Bookings | Brance Tours & Safaris</title>
+  <link rel="stylesheet" href="sytle.css">
+  <script src="customer.js" defer></script>
+</head>
+<body class="account-page">
+  <header class="account-header">
+    <a class="brand" href="/" aria-label="Brance Tours & Safaris home">
+      <img src="logo.png" alt="" class="brand-logo" width="1254" height="1254">
+      <span class="brand-name">BRANCE TOURS & SAFARIS</span>
+    </a>
+    <nav class="account-nav" aria-label="Account navigation">
+      <a href="/">Home</a>
+      <a class="nav-auth" id="loginNav" href="/login.html" hidden>Log in</a>
+      <a class="nav-auth nav-auth-primary" id="signupNav" href="/signup.html" hidden>Sign up</a>
+      <a class="nav-auth" id="customerNav" href="/dashboard.html">My bookings</a>
+      <button class="nav-auth nav-auth-button" id="customerLogout" type="button">Log out</button>
+    </nav>
+  </header>
+  <main class="account-main account-dashboard">
+    <section class="dashboard-heading">
+      <p class="eyebrow">CUSTOMER ACCOUNT</p>
+      <h1>My booking requests</h1>
+      <p id="customerWelcome"></p>
+      <p class="account-hint">Requests stay pending until Brance Tours & Safaris confirms them.</p>
+    </section>
+    <p class="account-status" id="dashboardStatus" role="status" aria-live="polite"></p>
+    <section class="customer-bookings" id="customerBookings" aria-live="polite"></section>
+    <a class="button button-gold" href="/#contact">Plan another trip</a>
+  </main>
+</body>
+</html>
