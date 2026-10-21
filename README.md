@@ -1,5 +1,11 @@
 # Brance Tours & Safaris
 
+## Public website on Netlify
+
+The public website is configured for https://brancesafaris.netlify.app using Netlify hosting. The deployment preparation command copies only the homepage, its stylesheet, browser script and referenced local images into the `public` publish directory. Server code, environment files, account pages and database files are excluded. No custom domain or paid service is required for this public website; free hosting remains subject to the account plan and usage limits.
+
+Visitors can explore the tours and accommodation and contact the team by WhatsApp, phone or email. Online booking, customer accounts and staff administration are not enabled on this deployment. Previous account page URLs redirect to the contact section. The local Node backend remains in the repository for future work; the documentation below describes that backend rather than the public Netlify deployment.
+
 The website uses a Node.js backend to validate and save booking requests in SQLite, send the business notification to `brancetoursandsafaris@gmail.com`, and email the customer a receipt when they provide an address. A received request remains pending until Brance Tours & Safaris confirms it.
 
 ## Requirements

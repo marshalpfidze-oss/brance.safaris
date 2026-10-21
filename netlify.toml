@@ -1,0 +1,29 @@
+[build]
+  base = "."
+  command = "node scripts/prepare-public.cjs"
+  publish = "public"
+
+[[redirects]]
+  from = "/login*"
+  to = "/#contact"
+  status = 302
+
+[[redirects]]
+  from = "/signup*"
+  to = "/#contact"
+  status = 302
+
+[[redirects]]
+  from = "/dashboard*"
+  to = "/#contact"
+  status = 302
+
+[[redirects]]
+  from = "/admin*"
+  to = "/#contact"
+  status = 302
+
+[[redirects]]
+  from = "/reset-password*"
+  to = "/#contact"
+  status = 302

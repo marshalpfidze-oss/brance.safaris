@@ -34,10 +34,6 @@
       <a href="#accommodation">Accommodation</a>
       <a href="#destinations">Destinations</a>
       <a href="#gallery">Gallery</a>
-      <a class="nav-auth" id="loginNav" href="/login.html">Log in</a>
-      <a class="nav-auth nav-auth-primary" id="signupNav" href="/signup.html">Sign up</a>
-      <a class="nav-auth" id="customerNav" href="/dashboard.html" hidden>My bookings</a>
-      <button class="nav-auth nav-auth-button" id="customerLogout" type="button" hidden>Log out</button>
       <a href="#contact" class="nav-cta">Book Your Safari</a>
     </nav>
   </header>
@@ -471,94 +467,14 @@
           Email our team: brancetoursandsafaris@gmail.com</a></p>
       </div>
 
-      <form class="contact-form" id="bookingForm" method="post" action="/api/bookings" aria-describedby="formStatus">
-        <h3>Plan your safari</h3>
-
-        <label for="name">Your full name</label>
-        <input id="name" name="name" type="text"
-          placeholder="Enter your name" maxlength="120" autocomplete="name" required>
-
-        <label for="email">Your email address (optional)</label>
-        <input id="email" name="email" type="email"
-          placeholder="you@example.com" maxlength="254" autocomplete="email">
-
-        <label for="phone">Phone number (provide phone or WhatsApp)</label>
-        <input id="phone" name="phone" type="tel"
-          placeholder="+263..." maxlength="30" autocomplete="tel">
-
-        <label for="whatsapp">WhatsApp number (provide phone or WhatsApp)</label>
-        <input id="whatsapp" name="whatsapp" type="tel"
-          placeholder="+263..." maxlength="30">
-        <p class="form-note">Provide a phone number or WhatsApp number so our team can contact you.</p>
-
-        <label for="service">Choose a service</label>
-        <select id="service" name="service" required>
-          <option value="">Select a service</option>
-          <option value="Zambezi Game Drive">Zambezi Game Drive</option>
-          <option value="RIDING QUARD BIKES">Quad Bikes</option>
-          <option value="Rafting (White-Water Rafting)">Rafting</option>
-          <option value="Braai (BBQ) Safari">Braai (BBQ) Safari</option>
-          <option value="Zip Line Experience">Zip Line Experience</option>
-          <option value="Helicopter Tours / Microlight Flights">Helicopter Tours / Microlight Flights</option>
-          <option value="Geological Formations">Geological Formations</option>
-          <option value="Boma dinner and Drum Show">Boma Dinner and Drum Show</option>
-          <option value="Jet Boat & Jet Ski">Jet Boat & Jet Ski</option>
-          <option value="Full Day Chobe National Park Excursion">Full Day Chobe National Park Excursion</option>
-          <option value="VILLAGE TOUR">Village Tour</option>
-          <option value="Bamba Tram Safari">Bamba Tram Safari</option>
-          <option value="Helicopter tours">Helicopter tours</option>
-          <option value="village tour">Village tour</option>
-          <option value="High Tea Safari">High Tea Safari</option>
-          <option value="Gin & Tonic Safari">Gin & Tonic Safari</option>
-          <option value="Baobab & Vulture Experience">Baobab & Vulture Experience</option>
-          <option value="Guided Town Safari">Guided Town Safari</option>
-          <option value="Chobe Day Trip">Chobe Day Trip</option>
-          <option value="Chobe Overnight Safari">Chobe Overnight Safari</option>
-          <option value="Hwange Safari">Hwange Safari</option>
-          <option value="Victoria Falls Guided Tour">Victoria Falls Guided Tour</option>
-          <option value="Guided Rainforest Walk">Guided Rainforest Walk</option>
-          <option value="The Outlook (Accommodation)">The Outlook accommodation</option>
-          <option value="The Little Outlook (Accommodation)">The Little Outlook accommodation</option>
-          <option value="Spring Villa Guest Lodge and Campsite (Accommodation)">Spring Villa Guest Lodge and Campsite</option>
-          <option value="Bethel Lodgings (Accommodation)">Bethel Lodgings accommodation</option>
-          <option value="Airport transfer">Airport transfer</option>
-          <option value="Other service">Other service</option>
-        </select>
-
-        <label for="serviceDetails">Other service details (if applicable)</label>
-        <input id="serviceDetails" name="serviceDetails" type="text"
-          placeholder="Describe the service if you selected Other service" maxlength="200">
-
-        <label for="adults">Number of adults</label>
-        <input id="adults" name="adults" type="number"
-          min="1" max="99" value="1" required>
-
-        <label for="children">Number of children</label>
-        <input id="children" name="children" type="number"
-          min="0" max="99" value="0" required>
-
-        <p class="guest-total" id="guestCount" aria-live="polite">Total guests: 1</p>
-
-        <label for="date">Preferred booking date</label>
-        <input id="date" name="date" type="date">
-
-        <label for="preferredTime">Preferred time (optional)</label>
-        <input id="preferredTime" name="preferredTime" type="time">
-
-        <label for="location">Accommodation or pickup location (if applicable)</label>
-        <input id="location" name="location" type="text"
-          placeholder="Hotel, lodge, address or pickup point" maxlength="200">
-
-        <label for="specialRequests">Special requests or additional information</label>
-        <textarea id="specialRequests" name="specialRequests" rows="4"
-          placeholder="Share any preferences, questions or other details..." maxlength="2000"></textarea>
-
-        <button type="submit" class="button button-gold full-button">
-          Submit Booking Request
-        </button>
-        <p class="form-note">Your request will be sent securely to Brance Tours & Safaris. It is not confirmed until our team contacts you.</p>
-        <p class="form-note" id="formStatus" aria-live="polite"></p>
-      </form>
+      <div class="contact-form" aria-labelledby="enquiry-heading">
+        <h3 id="enquiry-heading">Plan your safari</h3>
+        <p>Online booking, customer accounts and the staff dashboard are not available yet. Contact our team directly to arrange your trip.</p>
+        <p>Include your preferred experience, travel dates, number of adults and children, and pickup location.</p>
+        <a class="button button-gold full-button" href="https://wa.me/263789934035" target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+        <a class="text-link" href="mailto:brancetoursandsafaris@gmail.com?subject=Safari%20enquiry">Send an email enquiry</a>
+        <p class="form-note">Availability, prices and your booking are confirmed directly by our team.</p>
+      </div>
     </section>
   </main>
 
@@ -611,7 +527,6 @@
     </p>
   </footer>
 
-  <script src="customer.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

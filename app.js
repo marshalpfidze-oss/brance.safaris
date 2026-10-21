@@ -51,20 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Fill the booking form with the selected service
+  // Open a direct enquiry with the selected experience.
   document.querySelectorAll(".book-tour").forEach((link) => {
-    link.addEventListener("click", () => {
-      const serviceName = link.dataset.tour;
-      const serviceSelect = document.getElementById("service");
-
-      const matchingOption = Array.from(serviceSelect.options).find(
-        (option) => option.value === serviceName
-      );
-
-      if (matchingOption) {
-        serviceSelect.value = matchingOption.value;
-      }
-    });
+    const message = `Hello Brance Tours & Safaris, I would like to enquire about ${link.dataset.tour}.`;
+    link.href = `https://wa.me/263789934035?text=${encodeURIComponent(message)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
   });
 
   // Search the accommodation cards already rendered on the page
@@ -221,171 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
     chatForm.requestSubmit();
   });
 
-  // Submit booking requests to the server, which stores them and sends emails.
-  const bookingForm = document.getElementById("bookingForm");
-  const formStatus = document.getElementById("formStatus");
-  const guestCount = document.getElementById("guestCount");
-  const adultsInput = document.getElementById("adults");
-  const childrenInput = document.getElementById("children");
-  const phoneInput = document.getElementById("phone");
-  const whatsappInput = document.getElementById("whatsapp");
-  const serviceSelect = document.getElementById("service");
-  const serviceDetailsInput = document.getElementById("serviceDetails");
-  const submitButton = bookingForm.querySelector('button[type="submit"]');
-  let idempotencyKey = crypto.randomUUID();
-  let lastSubmittedPayload = null;
-  let isSubmitting = false;
-
-  const updateGuestCount = () => {
-    const adults = Number(adultsInput.value) || 0;
-    const children = Number(childrenInput.value) || 0;
-    childrenInput.max = String(Math.max(0, 99 - adults));
-    guestCount.textContent = `Total guests: ${adults + children}`;
-  };
-
-  adultsInput.addEventListener("input", updateGuestCount);
-  childrenInput.addEventListener("input", updateGuestCount);
-  const validateContactNumber = () => {
-    const missingBoth = !phoneInput.value.trim() && !whatsappInput.value.trim();
-    phoneInput.setCustomValidity(missingBoth
-      ? "Enter a phone number or WhatsApp number."
-      : "");
-    whatsappInput.setCustomValidity(missingBoth
-      ? "Enter a phone number or WhatsApp number."
-      : "");
-  };
-  phoneInput.addEventListener("input", validateContactNumber);
-  whatsappInput.addEventListener("input", validateContactNumber);
-  validateContactNumber();
-  serviceSelect.addEventListener("change", () => {
-    serviceDetailsInput.required = serviceSelect.value === "Other service";
-  });
-
-  bookingForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (isSubmitting) return;
-    if (!bookingForm.reportValidity()) {
-      return;
-    }
-
-    const formData = new FormData(bookingForm);
-    const booking = {
-      fullName: String(formData.get("name")).trim(),
-      email: String(formData.get("email")).trim(),
-      phone: String(formData.get("phone")).trim(),
-      whatsapp: String(formData.get("whatsapp")).trim(),
-      service: String(formData.get("service")),
-      serviceDetails: String(formData.get("serviceDetails")).trim(),
-      date: String(formData.get("date")),
-      preferredTime: String(formData.get("preferredTime")),
-      adults: Number(formData.get("adults")),
-      children: Number(formData.get("children")),
-      location: String(formData.get("location")).trim(),
-      specialRequests: String(formData.get("specialRequests")).trim()
-    };
-    const requestBody = JSON.stringify(booking);
-    if (lastSubmittedPayload !== null && lastSubmittedPayload !== requestBody) {
-      idempotencyKey = crypto.randomUUID();
-    }
-    lastSubmittedPayload = requestBody;
-
-    isSubmitting = true;
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending booking request...";
-    formStatus.dataset.state = "";
-    formStatus.textContent = "Submitting your request securely...";
-
-    try {
-      const response = await fetch(bookingForm.action, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Idempotency-Key": idempotencyKey
-        },
-        body: requestBody
-      });
-      const contentType = response.headers.get("content-type") || "";
-      const responseBody = await response.text();
-      const isJson = /(?:application\/json|\+json)(?:\s*;|$)/i.test(contentType);
-
-      if (!responseBody.trim()) {
-        throw new Error(
-          `The booking service returned an empty response (HTTP ${response.status}). Your booking was not confirmed; please try again or contact us.`
-        );
-      }
-
-      if (!isJson) {
-        const status = response.status ? ` (HTTP ${response.status})` : "";
-        throw new Error(
-          `The booking service returned an unexpected response${status}. Make sure the Node.js backend is running and /api/bookings points to it.`
-        );
-      }
-
-      let result;
-      try {
-        result = JSON.parse(responseBody);
-      } catch {
-        throw new Error(
-          `The booking service returned invalid JSON (HTTP ${response.status}). Your booking was not confirmed; please try again or contact us.`
-        );
-      }
-
-      if (!result || typeof result !== "object" || Array.isArray(result)) {
-        throw new Error(
-          `The booking service returned an unexpected JSON response (HTTP ${response.status}). Your booking was not confirmed; please contact us.`
-        );
-      }
-
-      if (!response.ok) {
-        const reference = typeof result.bookingReference === "string"
-          ? ` Booking reference: ${result.bookingReference}.`
-          : "";
-        const serverError = typeof result.error === "string"
-          ? result.error
-          : "Your booking could not be submitted.";
-        throw new Error(`${serverError}${reference}`);
-      }
-
-      if (
-        typeof result.bookingReference !== "string" ||
-        typeof result.message !== "string"
-      ) {
-        throw new Error(
-          "The booking service response was incomplete. Your booking was not confirmed; please contact us before submitting again."
-        );
-      }
-
-      formStatus.dataset.state = result.customerEmailStatus === "failed"
-        ? "warning"
-        : "success";
-      formStatus.textContent =
-        `${result.message} Booking reference: ${result.bookingReference}.`;
-    } catch (error) {
-      formStatus.dataset.state = "error";
-      formStatus.textContent = error instanceof TypeError
-        ? "We could not reach the booking service. Check your connection and try again."
-        : error.message;
-    } finally {
-      isSubmitting = false;
-      submitButton.disabled = false;
-      submitButton.textContent = "Submit Booking Request";
-    }
-  });
-
   // Automatically update the footer year
   document.getElementById("year").textContent =
     new Date().getFullYear();
 
-  // Prevent choosing a past date for a new enquiry
-  const dateInput = document.getElementById("date");
-  const today = new Date();
-  const localToday = [
-    today.getFullYear(),
-    String(today.getMonth() + 1).padStart(2, "0"),
-    String(today.getDate()).padStart(2, "0")
-  ].join("-");
-
-  dateInput.min = localToday;
-  updateGuestCount();
 });
